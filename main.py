@@ -2,7 +2,9 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QRect, QMetaObject
 from PyQt5.QtGui import QPixmap, QIcon, QFont
 from PyQt5.QtWidgets import QRadioButton, QGridLayout, QWidget, QTextEdit, QAction, QMainWindow, QApplication, QToolBar, \
-    QStatusBar, QMenuBar, QMenu, QPushButton, QComboBox, QButtonGroup
+    QStatusBar, QMenuBar, QMenu, QPushButton, QComboBox, QButtonGroup, QFileDialog
+
+filePath = ''
 
 
 def setFontSize(textEdit, fontSize):
@@ -17,6 +19,41 @@ def setFontType(textEdit, button):
 def setTextColor(textEdit, button):
     if button.isChecked():
         textEdit.setTextColor(button.palette().button().color())
+
+
+def handleNewFile(textEdit):
+    global filePath
+    textEdit.clear()
+    filePath = ''
+
+
+def handleOpenFile(textEdit):
+    global filePath
+    file = QFileDialog.getOpenFileName(None, 'Open text file', 'c:\\', "Text files (*.txt)")
+    if file[0] != '':
+        filePath = file[0]
+        txt = open(filePath, 'rt').read()
+        textEdit.setText(txt)
+
+
+def handleSaveFile(textEdit):
+    global filePath
+    if filePath != '':
+        try:
+            with open(filePath, 'w') as file:
+                file.write(textEdit.toPlainText())
+        except Exception as e:
+            print(str(e))
+    else:
+        handleSaveFileAs(textEdit)
+
+
+def handleSaveFileAs(textEdit):
+    global filePath
+    file = QFileDialog.getSaveFileName(None, 'Open text file', 'c:\\', "Text files (*.txt)")
+    if file[0] != '':
+        filePath = file[0]
+        handleSaveFile(textEdit)
 
 
 class Ui_MainWindow(object):
@@ -277,9 +314,13 @@ class Ui_MainWindow(object):
         self.toolBar.setMovable(False)
         MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
         self.actionNowy = QAction(MainWindow)
+        self.actionNowy.triggered.connect(lambda: handleNewFile(self.textEdit))
         self.actionOtworz = QAction(MainWindow)
+        self.actionOtworz.triggered.connect(lambda: handleOpenFile(self.textEdit))
         self.actionZapisz = QAction(MainWindow)
+        self.actionZapisz.triggered.connect(lambda: handleSaveFile(self.textEdit))
         self.actionZapisz_jako = QAction(MainWindow)
+        self.actionZapisz_jako.triggered.connect(lambda: handleSaveFileAs(self.textEdit))
         self.actionZakoncz = QAction(MainWindow)
         self.actionZakoncz.triggered.connect(lambda: sys.exit())
         self.actionWytnij = QAction(MainWindow)
@@ -294,7 +335,9 @@ class Ui_MainWindow(object):
         icon1 = QIcon()
         icon1.addPixmap(QPixmap("file.png"), QIcon.Normal, QIcon.Off)
         self.actionNew_File.setIcon(icon1)
+        self.actionNew_File.triggered.connect(lambda: handleNewFile(self.textEdit))
         self.actionOpen_File = QAction(MainWindow)
+        self.actionOpen_File.triggered.connect(lambda: handleOpenFile(self.textEdit))
         icon2 = QIcon()
         icon2.addPixmap(QPixmap("browse.png"), QIcon.Normal, QIcon.Off)
         self.actionOpen_File.setIcon(icon2)
@@ -302,6 +345,7 @@ class Ui_MainWindow(object):
         icon3 = QIcon()
         icon3.addPixmap(QPixmap("save.png"), QIcon.Normal, QIcon.Off)
         self.actionSave_File.setIcon(icon3)
+        self.actionSave_File.triggered.connect(lambda: handleSaveFile(self.textEdit))
         self.actionUndo = QAction(MainWindow)
         self.actionUndo.triggered.connect(lambda: self.textEdit.undo())
         icon4 = QIcon()
