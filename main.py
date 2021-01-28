@@ -21,8 +21,10 @@ def setFontType(textEdit, button, statusBar):
 
 def setTextColor(textEdit, button, statusBar):
     if button.isChecked():
-        textEdit.setTextColor(button.palette().button().color())
-        statusBar.setText('Zmieniono kolor czcionki')
+        palette = textEdit.viewport().palette()
+        palette.setColor(textEdit.viewport().backgroundRole(), button.palette().button().color())
+        textEdit.viewport().setPalette(palette)
+        statusBar.setText('Zmieniono kolor tła')
 
 
 def handleNewFile(textEdit, statusBar):
