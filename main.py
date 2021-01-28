@@ -19,7 +19,7 @@ def setFontType(textEdit, button, statusBar):
         statusBar.setText('Zmieniono typ czcionki na ' + text)
 
 
-def setTextColor(textEdit, button, statusBar):
+def setBackgroundColor(textEdit, button, statusBar):
     if button.isChecked():
         palette = textEdit.viewport().palette()
         palette.setColor(textEdit.viewport().backgroundRole(), button.palette().button().color())
@@ -159,7 +159,7 @@ class Ui_MainWindow(object):
         self.pushButton_3.setText("")
         self.pushButton_3.setCheckable(True)
         self.pushButton_3.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_3, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_3, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_3)
         self.gridLayout_2.addWidget(self.pushButton_3, 2, 0, 1, 1)
@@ -170,7 +170,7 @@ class Ui_MainWindow(object):
         self.pushButton_16.setText("")
         self.pushButton_16.setCheckable(True)
         self.pushButton_16.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_16, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_16, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_16)
         self.gridLayout_2.addWidget(self.pushButton_16, 3, 3, 1, 1)
@@ -181,7 +181,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setText("")
         self.pushButton_2.setCheckable(True)
         self.pushButton_2.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_2, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_2, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_2)
         self.gridLayout_2.addWidget(self.pushButton_2, 1, 0, 1, 1)
@@ -192,7 +192,7 @@ class Ui_MainWindow(object):
         self.pushButton_6.setText("")
         self.pushButton_6.setCheckable(True)
         self.pushButton_6.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_6, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_6, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_6)
         self.gridLayout_2.addWidget(self.pushButton_6, 0, 1, 1, 1)
@@ -203,7 +203,7 @@ class Ui_MainWindow(object):
         self.pushButton_10.setText("")
         self.pushButton_10.setCheckable(True)
         self.pushButton_10.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_10, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_10, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_10)
         self.gridLayout_2.addWidget(self.pushButton_10, 1, 2, 1, 1)
@@ -215,7 +215,7 @@ class Ui_MainWindow(object):
         self.pushButton.setCheckable(True)
         self.pushButton.setChecked(True)
         self.pushButton.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton)
         self.gridLayout_2.addWidget(self.pushButton, 0, 0, 1, 1)
@@ -226,7 +226,7 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText("")
         self.pushButton_7.setCheckable(True)
         self.pushButton_7.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_7, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_7, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_7)
         self.gridLayout_2.addWidget(self.pushButton_7, 2, 1, 1, 1)
@@ -237,7 +237,7 @@ class Ui_MainWindow(object):
         self.pushButton_11.setText("")
         self.pushButton_11.setCheckable(True)
         self.pushButton_11.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_11, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_11, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_11)
         self.gridLayout_2.addWidget(self.pushButton_11, 2, 2, 1, 1)
@@ -248,7 +248,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.setText("")
         self.pushButton_4.setCheckable(True)
         self.pushButton_4.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_4, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_4, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_4)
         self.gridLayout_2.addWidget(self.pushButton_4, 3, 0, 1, 1)
@@ -259,7 +259,7 @@ class Ui_MainWindow(object):
         self.pushButton_12.setText("")
         self.pushButton_12.setCheckable(True)
         self.pushButton_12.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_12, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_12, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_12)
         self.gridLayout_2.addWidget(self.pushButton_12, 3, 2, 1, 1)
@@ -270,7 +270,7 @@ class Ui_MainWindow(object):
         self.pushButton_14.setText("")
         self.pushButton_14.setCheckable(True)
         self.pushButton_14.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_14, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_14, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_14)
         self.gridLayout_2.addWidget(self.pushButton_14, 1, 3, 1, 1)
@@ -281,7 +281,7 @@ class Ui_MainWindow(object):
         self.pushButton_15.setText("")
         self.pushButton_15.setCheckable(True)
         self.pushButton_15.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_15, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_15, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_15)
         self.gridLayout_2.addWidget(self.pushButton_15, 2, 3, 1, 1)
@@ -292,7 +292,7 @@ class Ui_MainWindow(object):
         self.pushButton_5.setText("")
         self.pushButton_5.setCheckable(True)
         self.pushButton_5.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_5, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_5, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_5)
         self.gridLayout_2.addWidget(self.pushButton_5, 1, 1, 1, 1)
@@ -303,7 +303,7 @@ class Ui_MainWindow(object):
         self.pushButton_9.setText("")
         self.pushButton_9.setCheckable(True)
         self.pushButton_9.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_9, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_9, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_9)
         self.gridLayout_2.addWidget(self.pushButton_9, 0, 2, 1, 1)
@@ -314,7 +314,7 @@ class Ui_MainWindow(object):
         self.pushButton_8.setText("")
         self.pushButton_8.setCheckable(True)
         self.pushButton_8.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_8, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_8, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_8)
         self.gridLayout_2.addWidget(self.pushButton_8, 3, 1, 1, 1)
@@ -325,7 +325,7 @@ class Ui_MainWindow(object):
         self.pushButton_17.setText("")
         self.pushButton_17.setCheckable(True)
         self.pushButton_17.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_17, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_17, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_17)
         self.gridLayout_2.addWidget(self.pushButton_17, 0, 4, 1, 1)
@@ -336,7 +336,7 @@ class Ui_MainWindow(object):
         self.pushButton_18.setText("")
         self.pushButton_18.setCheckable(True)
         self.pushButton_18.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_18, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_18, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_18)
         self.gridLayout_2.addWidget(self.pushButton_18, 1, 4, 1, 1)
@@ -347,7 +347,7 @@ class Ui_MainWindow(object):
         self.pushButton_19.setText("")
         self.pushButton_19.setCheckable(True)
         self.pushButton_19.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_19, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_19, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_19)
         self.gridLayout_2.addWidget(self.pushButton_19, 2, 4, 1, 1)
@@ -358,7 +358,7 @@ class Ui_MainWindow(object):
         self.pushButton_20.setText("")
         self.pushButton_20.setCheckable(True)
         self.pushButton_20.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_20, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_20, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_20)
         self.gridLayout_2.addWidget(self.pushButton_20, 3, 4, 1, 1)
@@ -369,7 +369,7 @@ class Ui_MainWindow(object):
         self.pushButton_13.setText("")
         self.pushButton_13.setCheckable(True)
         self.pushButton_13.toggled.connect(
-            lambda e, textEdit=self.textEdit, button=self.pushButton_13, statusBar=self.statusBarText: setTextColor(
+            lambda e, textEdit=self.textEdit, button=self.pushButton_13, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
         self.pushButtonGroup.addButton(self.pushButton_13)
         self.gridLayout_2.addWidget(self.pushButton_13, 0, 3, 1, 1)
