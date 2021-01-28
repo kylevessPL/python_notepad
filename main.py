@@ -180,6 +180,7 @@ class Ui_MainWindow(object):
                                         "}")
         self.pushButton_2.setText("")
         self.pushButton_2.setCheckable(True)
+        self.pushButton_2.setChecked(True)
         self.pushButton_2.toggled.connect(
             lambda e, textEdit=self.textEdit, button=self.pushButton_2, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
@@ -213,7 +214,6 @@ class Ui_MainWindow(object):
                                       "}")
         self.pushButton.setText("")
         self.pushButton.setCheckable(True)
-        self.pushButton.setChecked(True)
         self.pushButton.toggled.connect(
             lambda e, textEdit=self.textEdit, button=self.pushButton, statusBar=self.statusBarText: setBackgroundColor(
                 textEdit, button, statusBar))
